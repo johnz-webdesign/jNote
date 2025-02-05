@@ -4,23 +4,24 @@ const subjects = ["JavaScript", "React", "CSS", "Design"];
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 gap-5">
-      <div className="flex flex-col gap-2.5">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-gray-100">
+      <div className="flex flex-col gap-4">
         <h1 className="text-5xl font-bold">Welcome to jNote</h1>
         <h2>Write down your thoughts, worries, hopes and dreams</h2>
+        <hr className="border border-slate-400" />
       </div>
-      <ul className="space-y-4">
+      <div className="grid grid-cols-4 gap-7">
         {subjects.map((subject) => (
-          <li key={subject}>
+          <p key={subject}>
             <Link
               to={`/notes/${subject.toLowerCase()}`}
-              className="block px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
+              className="block rounded-lg bg-blue-500 px-6 py-3 text-center text-white shadow transition hover:bg-blue-600"
             >
               {subject}
             </Link>
-          </li>
+          </p>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
