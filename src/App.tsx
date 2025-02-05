@@ -1,25 +1,16 @@
-import { Link } from "react-router-dom";
-import SubjectCard from "../components/SubjectCard";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Notes from "./pages/Notes";
 
-const subjects = [
-  { name: "JavaScript", path: "/notes/javascript" },
-  { name: "React", path: "/notes/react" },
-  { name: "CSS", path: "/notes/css" },
-];
-
-const Home = () => {
+const App = () => {
   return (
-    <div>
-      <h1>Welcome to jNote</h1>
-      <div className="subjects-container">
-        {subjects.map((subject, index) => (
-          <Link key={index} to={subject.path}>
-            <SubjectCard title={subject.name} />
-          </Link>
-        ))}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/notes/:subject" element={<Notes />} />
+      </Routes>
+    </Router>
   );
 };
 
-export default Home;
+export default App;
