@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import notesData from "../data/content";
 
-const subjects = ["Testing", "React", "CSS", "Design"];
+// Dynamically derive the subjects from notesData keys
+const subjects = Object.keys(notesData);
 
 const Home = () => {
   return (

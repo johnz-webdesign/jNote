@@ -1,5 +1,5 @@
 const notesData: Record<string, { title: string; content: string }[]> = {
-  testing: [
+  Sleep: [
     {
       title: "Lorem Ipsom",
       content: "Closures retain access to outer scope variables."
@@ -9,7 +9,7 @@ const notesData: Record<string, { title: string; content: string }[]> = {
       content: "Promises handle asynchronous operations."
     }
   ],
-  react: [
+  React: [
     {
       title: "useState Hook",
       content: "`useState` adds state to functional components."
