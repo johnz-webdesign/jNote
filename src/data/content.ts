@@ -1,7 +1,7 @@
 const notesData: Record<string, { title: string; content: string }[]> = {
-  javascript: [
+  testing: [
     {
-      title: "Closures",
+      title: "Lorem Ipsom",
       content: "Closures retain access to outer scope variables."
     },
     {

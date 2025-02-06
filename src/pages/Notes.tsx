@@ -1,34 +1,17 @@
 import { useParams, Link } from "react-router-dom";
-import notesData from "../data/notes";
+import notesData from "../data/content";
 
-const notesData: Record<string, { title: string; content: string }[]> = {
-  javascript: [
-    {
-      title: "Closures",
-      content: "Closures retain access to outer scope variables.",
-    },
-    { title: "Promises", content: "Promises handle asynchronous operations." },
-  ],
-  react: [
-    {
-      title: "useState Hook",
-      content: "useState adds state to functional components.",
-    },
-    {
-      title: "useEffect Hook",
-      content: "useEffect runs after render for side effects.",
-    },
-  ],
-};
+console.log("Imported notesData:", notesData);
 
 const Notes = () => {
   const { subject } = useParams<{ subject: string }>();
-  const notes = notesData[subject || ""] || [];
+  // Normalize the subject to lowercase to match the keys in notesData
+  const notes = notesData[subject?.toLowerCase() || ""] || [];
 
   return (
     <div
       data-t="wrapper"
-      className="center min-h-screen flex-col gap-5 rounded-lg bg-bg"
+      className="center min-h-screen flex-col gap-5 rounded-lg bg-bg p-6"
     >
       <Link to="/" className="text-blue-500 hover:underline">
         ← Back to Home

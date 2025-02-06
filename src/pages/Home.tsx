@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const subjects = ["JavaScript", "React", "CSS", "Design"];
+const subjects = ["Testing", "React", "CSS", "Design"];
 
 const Home = () => {
   return (
