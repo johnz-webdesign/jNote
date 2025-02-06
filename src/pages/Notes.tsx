@@ -25,11 +25,14 @@ const Notes = () => {
   const notes = notesData[subject || ""] || [];
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div
+      data-t="wrapper"
+      className="center min-h-screen flex-col gap-5 rounded-lg bg-bg"
+    >
       <Link to="/" className="text-blue-500 hover:underline">
         ← Back to Home
       </Link>
-      <h2 className="text-2xl font-bold mt-4 mb-6">
+      <h2 className="mb-6 mt-4 text-2xl font-bold">
         {subject ? subject.toUpperCase() : "Notes"}
       </h2>
       <div className="space-y-4">
@@ -37,9 +40,9 @@ const Notes = () => {
           notes.map((note, index) => (
             <div
               key={index}
-              className="p-4 bg-white shadow-md rounded-lg border border-gray-200"
+              className="rounded-lg border border-gray-200 bg-white p-4 shadow-md"
             >
-              <h3 className="text-lg font-semibold mb-2">{note.title}</h3>
+              <h3 className="mb-2 text-lg font-semibold">{note.title}</h3>
               <p className="text-gray-700">{note.content}</p>
             </div>
           ))

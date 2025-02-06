@@ -17,6 +17,12 @@
     }
 }
 
+@layer utilities {
+    .center {
+        @apply flex items-center justify-center;
+    }
+}
+
 /* scrollbar styling */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
