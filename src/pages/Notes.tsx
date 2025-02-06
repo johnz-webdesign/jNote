@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import notesData from "../data/notes";
 
 const notesData: Record<string, { title: string; content: string }[]> = {
   javascript: [
